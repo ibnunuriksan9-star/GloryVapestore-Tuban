@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glory Vapestore - Premium Vaping Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="assets/logo_real.jpg" alt="Glory Vapestore Logo" style="border-radius: 5px;">
+                <span>GLORY VAPESTORE</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#products">Produk</a></li>
+                <li><a href="#feedback">Saran</a></li>
+            </ul>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to <span class="gold-text">Glory Vapestore</span></h1>
+            <p>Rasakan sensasi vaping premium dengan koleksi terbaik kami.</p>
+            <a href="#products" class="btn btn-primary">Belanja Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="section profile-section">
+        <div class="container">
+            <h2 class="section-title">Tentang Kami</h2>
+            <div class="profile-content">
+                <div class="profile-text">
+                    <h3>Rendy Zulfarino</h3>
+                    <p class="subtitle">Founder & Owner</p>
+                    <p>
+                        Berlokasi di <strong>Kecamatan Palang, Kabupaten Tuban</strong>, Glory Vapestore hadir untuk
+                        memenuhi kebutuhan vaping Anda dengan produk berkualitas tinggi dan pelayanan terbaik.
+                        Kami berdedikasi untuk menyediakan device, liquid, dan aksesoris vaping terdepan di kelasnya.
+                        Visi kami adalah menjadikan vaping sebagai gaya hidup yang elegan dan menyenangkan bagi
+                        komunitas kami.
+                    </p>
+                    <div class="contact-info">
+                        <p><a href="https://wa.me/6285963039656" target="_blank"
+                                style="text-decoration: none; color: inherit;"><i class="fab fa-whatsapp"></i>
+                                085963039656</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> Palang, Tuban, Indonesia</p>
+                    </div>
+                </div>
+                <div class="profile-decoration">
+                    <img src="assets/owner.jpg" alt="Rendy Zulfarino" class="owner-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section products-section">
+        <div class="container">
+            <h2 class="section-title">Koleksi Premium</h2>
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback" class="section feedback-section">
+        <div class="container">
+            <h2 class="section-title">Masukan & Saran</h2>
+            <div class="feedback-card">
+                <p>Kami sangat menghargai pendapat Anda untuk kemajuan Glory Vapestore.</p>
+                <form id="feedback-form" onsubmit="sendFeedback(event)">
+                    <div class="form-group">
+                        <label>Nama Anda</label>
+                        <input type="text" id="feedback-name" required placeholder="Masukkan nama Anda">
+                    </div>
+                    <div class="form-group">
+                        <label>Pesan / Saran</label>
+                        <textarea id="feedback-message" required placeholder="Tulis masukan Anda disini..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Kirim ke WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Keranjang Pesanan</h3>
+                <span class="close-btn" onclick="toggleCart()">&times;</span>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will go here -->
+                <p class="empty-cart-msg">Keranjang masih kosong.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="total-section">
+                    <span>Total:</span>
+                    <span id="cart-total">Rp 0</span>
+                </div>
+                <!-- Payment Methods Info -->
+                <div class="payment-methods">
+                    <p>Metode Pembayaran:</p>
+                    <div class="payment-icons">
+                        <span class="payment-badge">BCA</span>
+                        <span class="payment-badge">DANA</span>
+                        <span class="payment-badge">GOPAY</span>
+                        <span class="payment-badge">CASH</span>
+                    </div>
+                </div>
+                <button onclick="checkout()" class="btn btn-primary btn-block">Konfirmasi via WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="product-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeProductModal()">&times;</span>
+            <div class="modal-body" id="product-detail-body">
+                <!-- injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <h3>GLORY VAPESTORE</h3>
+                <p>Premium Vaping in Tuban.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#products">Produk</a>
+                <a href="#feedback">Kontak</a>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Glory Vapestore. Designed with style.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
