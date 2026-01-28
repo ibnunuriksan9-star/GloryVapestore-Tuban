@@ -447,6 +447,21 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+.payment-badge:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.payment-badge.selected {
+    background: var(--gold);
+    color: var(--black);
+    font-weight: bold;
+    border-color: var(--gold-glow);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
 /* Feedback */
