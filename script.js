@@ -4,7 +4,7 @@ const products = [
         id: 1,
         name: "Lost Vape Centaurus M200",
         price: 850000,
-        image: "assets/centaurus.png",
+        image: "centaurus.png",
         specs: [
             "Dual 18650 Battery (Not Included)",
             "5-200W Power Range",
@@ -17,7 +17,7 @@ const products = [
         id: 2,
         name: "OXVA Xlim Pro Pod Kit",
         price: 320000,
-        image: "assets/oxva.png",
+        image: "oxva.png",
         specs: [
             "1000mAh Build-in Battery",
             "30W Max Output",
@@ -30,7 +30,7 @@ const products = [
         id: 3,
         name: "Centaurus DNA250C (Limited)",
         price: 2100000,
-        image: "assets/centaurus.png", // Reuse placeholder for demo
+        image: "centaurus.png", // Reuse placeholder for demo
         specs: [
             "Evolv DNA250C Chipset",
             "1-200W Output",
@@ -43,7 +43,7 @@ const products = [
         id: 4,
         name: "OXVA Xlim Pro 2",
         price: 350000,
-        image: "assets/oxva.png", // Reuse placeholder for demo
+        image: "oxva.png", // Reuse placeholder for demo
         specs: [
             "1300mAh Big Battery",
             "New HD Color Screen",
@@ -56,7 +56,7 @@ const products = [
         id: 5,
         name: "OXVA Xlim Pro",
         price: 315000,
-        image: "assets/xlim_pro.jpg",
+        image: "xlim_pro.jpg",
         specs: [
             "Output Power 5-30W",
             "1000mAh Battery",
@@ -69,7 +69,7 @@ const products = [
         id: 6,
         name: "OXVA Xlim Go 2",
         price: 185000,
-        image: "assets/xlim_go2.jpg",
+        image: "xlim_go2.jpg",
         specs: [
             "30W Max Output",
             "1000mAh Battery",
@@ -82,7 +82,7 @@ const products = [
         id: 7,
         name: "Liquid Peanut Butter Jelly",
         price: 130000,
-        image: "assets/liquid_pbj.jpg",
+        image: "liquid_pbj.jpg",
         specs: [
             "Volume: 60ml",
             "Flavor: Banana / Blueberry / Strawberry",
@@ -95,7 +95,7 @@ const products = [
         id: 8,
         name: "OXVA Xlim SE 2",
         price: 200000,
-        image: "assets/xlim_v2.jpg",
+        image: "xlim_v2.jpg",
         specs: [
             "30W Max Output",
             "1000mAh Battery",
@@ -108,7 +108,7 @@ const products = [
         id: 9,
         name: "FOOM x Weird Genius",
         price: 185000,
-        image: "assets/foom_wg.jpg",
+        image: "foom_wg.jpg",
         specs: [
             "Battery: 580mAh",
             "Capacity: 2ml",
@@ -289,3 +289,4 @@ window.onclick = function (event) {
         prodModal.style.display = "none";
     }
 }
+
