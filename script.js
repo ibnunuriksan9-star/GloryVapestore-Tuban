@@ -245,9 +245,27 @@ function renderCartItems() {
 }
 
 // Checkout (Send to WhatsApp)
+// Payment Logic
+let selectedPayment = "";
+
+function selectPayment(element, method) {
+    selectedPayment = method;
+
+    // UI Update
+    const badges = document.querySelectorAll('.payment-badge');
+    badges.forEach(badge => badge.classList.remove('selected'));
+    element.classList.add('selected');
+}
+
+// Checkout (Send to WhatsApp)
 function checkout() {
     if (cart.length === 0) {
         alert("Keranjang kosong!");
+        return;
+    }
+
+    if (!selectedPayment) {
+        alert("Silakan pilih metode pembayaran terlebih dahulu.");
         return;
     }
 
@@ -260,7 +278,8 @@ function checkout() {
     });
 
     message += `\nTotal Pembayaran: Rp ${total.toLocaleString('id-ID')}`;
-    message += "\n\nMohon informasi ketersediaan dan metode pembayarannya. Terima kasih.";
+    message += `\nMetode Pembayaran: ${selectedPayment}`;
+    message += "\n\nMohon konfirmasinya. Terima kasih.";
 
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -289,4 +308,3 @@ window.onclick = function (event) {
         prodModal.style.display = "none";
     }
 }
-
