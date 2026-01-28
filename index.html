@@ -121,14 +121,16 @@
                 <div class="payment-methods">
                     <p>Metode Pembayaran:</p>
                     <div class="payment-icons">
-                        <span class="payment-badge">BCA</span>
-                        <span class="payment-badge">DANA</span>
-                        <span class="payment-badge">GOPAY</span>
-                        <span class="payment-badge">CASH</span>
+                        <span class="payment-badge" onclick="selectPayment(this, 'BCA')">BCA</span>
+                        <span class="payment-badge" onclick="selectPayment(this, 'BRI')">BRI</span>
+                        <span class="payment-badge" onclick="selectPayment(this, 'JATIM')">JATIM</span>
+                        <span class="payment-badge" onclick="selectPayment(this, 'DANA')">DANA</span>
+                        <span class="payment-badge" onclick="selectPayment(this, 'GOPAY')">GOPAY</span>
+                        <span class="payment-badge" onclick="selectPayment(this, 'CASH')">CASH</span>
                     </div>
                     <div class="qris-section" style="margin-top: 15px; text-align: center;">
                         <p style="margin-bottom: 5px; font-size: 0.9rem;">Scan QRIS untuk Pembayaran:</p>
-                        <img src="qris.jpg" alt="QRIS Glory Vapestore"
+                        <img src="assets/qris.jpg" alt="QRIS Glory Vapestore"
                             style="width: 100%; max-width: 250px; border-radius: 10px; border: 2px solid white;">
                     </div>
                 </div>
@@ -170,5 +172,3 @@
 </body>
 
 </html>
-
-
